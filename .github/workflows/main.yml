@@ -10,8 +10,9 @@ jobs:
               
       - name: Checkout
         uses: actions/checkout@v2.4.2
-        with: 
-          run: npm start
+        
+      - run: npm install
+      - run: npm run start
       
       - name: Checkout cypress
         uses: actions/checkout@main
