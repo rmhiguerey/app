@@ -18,6 +18,7 @@ jobs:
         uses: ./
         timeout-minutes: 30
         with:
+          working-directory: rmhiguerey/cypress
           browser: chrome
           headless: true
           # we have already installed all dependencies above
