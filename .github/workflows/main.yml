@@ -21,7 +21,7 @@ jobs:
           headless: true
           # we have already installed all dependencies above
           install: true
-          #start: npm start
+          start: npm start
           command: npm run cypress-e2e
           # quote the url to be safe against YML parsing surprises
-          #wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:3000'
