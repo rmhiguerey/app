@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
-          path: cypress
+          path: test-run
 
  
       - name: Cypress run
