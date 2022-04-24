@@ -1,30 +1,25 @@
 name: Cypress Tests2
 
 on: [push]
+
 jobs:
 
  start:
     runs-on: ubuntu-latest
     steps:
     
-    - name: Checkout
-      uses: actions/checkout@v2.4.2
+    #- name: Checkout
+    - uses: actions/checkout@v2.4.2
     - run: npm install
     - run: npm start &
-
- cypress-run:
-    needs: start
-    runs-on: ubuntu-latest
-    steps:
     
-      - name: Checkout Cypress
-        uses: actions/checkout@main
-        with: 
-          repository: rmhiguerey/cypress
+    #- name: Checkout Cypress
+    - uses: actions/checkout@main
+      with: 
+         repository: rmhiguerey/cypress
 
-      - name: Cypress
-        uses: cypress-io/github-action@v2.9.7
-        with:
-         wait-on: "http://localhost:3000/"
-         
- 
+    #- name: Cypress
+    - uses: cypress-io/github-action@v2.9.7
+      with:
+        wait-on: "http://localhost:3000/"
+
