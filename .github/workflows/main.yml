@@ -7,16 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    
-      
+              
       - name: Checkout
+        uses: actions/checkout@v2.4.2
+      
+      - name: Checkout cypress
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
           path: cypress
-          
-      - name: Checkout
-        uses: actions/checkout@v2.4.2
+
  
       - name: Cypress run
         uses: cypress-io/github-action@v2
