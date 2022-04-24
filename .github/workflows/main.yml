@@ -9,7 +9,7 @@ jobs:
      
       - name: Checkout App
         uses: actions/checkout@v2.4.2
-      - run: npm install
+      - run: npm install npm-run-parallel
       - run: npm start  
       
       - name: Checkout Cypress
