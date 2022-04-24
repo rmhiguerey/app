@@ -23,5 +23,5 @@ jobs:
       with:
         browser: chrome
         headless: true
-        #wait-on: "http://localhost:3000/"
+        wait-on: "http://localhost:3000/"
 
