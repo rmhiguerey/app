@@ -1,12 +1,7 @@
 name: Cypress Tests2
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-    types: ["opened", "synchronize"]
-    
+on: [push]
+     
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -18,6 +13,10 @@ jobs:
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
+          
+      - name: Install Dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
 
 
       - name: Cypress run
