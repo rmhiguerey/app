@@ -24,7 +24,7 @@ jobs:
         uses: cypress-io/github-action@v2
         timeout-minutes: 30
         with:
-          #working-directory: /home/runner/work/app/app
+          #working-directory: /home/runner/work/app/app/frontend
           browser: chrome
           headless: true
           # we have already installed all dependencies above
