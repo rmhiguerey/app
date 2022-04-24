@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v2
         
   call-workflow:
-    uses: ./cypress/.github/workflows/main.yml
+    uses: rmhiguerey/cypress/.github/workflows/main.yml@main
