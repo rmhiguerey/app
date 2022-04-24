@@ -13,9 +13,12 @@ jobs:
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
+          path: cypress
           
       - name: Checkout
         uses: actions/checkout@v2.4.2
+        with:
+          path: main
  
       - name: Cypress run
         uses: cypress-io/github-action@v2
