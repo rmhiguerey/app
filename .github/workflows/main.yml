@@ -13,15 +13,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Cypress run
-        uses: cypress-io/github-action@0b54f5f8ac24556d292e3d05de456fbf7be0423d
-        timeout-minutes: 30
+        
+      - uses: actions/checkout@v3
         with:
-          browser: chrome
-          headless: true
-          # we have already installed all dependencies above
-          install: true
-          start: npm run start
-          # quote the url to be safe against YML parsing surprises
-          wait-on: 'http://localhost:3000'
+          repository: rmhiguerey/cypress
+          path: ./.github/actions/cypress
+
+      - name: Run my action
+        uses: ./.github/actions/cypress/main
