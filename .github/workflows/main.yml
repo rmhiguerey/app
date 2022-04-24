@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
-      - run: ./setup_test_infrastructure.sh
+      - run: npm run cypress-e2e
       
   build:
     needs: setup
