@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.4.2
         with: 
-          run: npm install , npm start
+          run: npm install , npm run start
       
       - name: Checkout cypress
         uses: actions/checkout@main
@@ -31,7 +31,6 @@ jobs:
           headless: true
           # we have already installed all dependencies above
           install: true
-          start: npm run start
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:3000'
 
