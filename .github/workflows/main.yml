@@ -14,5 +14,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-  call-workflow-2-in-local-repo:
-    uses: ./.github/workflows/main.yml
+  call-workflow:
+    uses: rmhiguerey/cypress/.github/workflows/main.yml@main
