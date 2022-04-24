@@ -10,11 +10,11 @@ jobs:
       - name: Checkout App
         uses: actions/checkout@v2.4.2
       - run: npm install npm-run-parallel
-      - run: npm start  
+      - run: npm-run-parallel start  
       
       - name: Checkout Cypress
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
-      - run: npm run cypress-e2e
+      - run: npm-run-parallel run cypress-e2e
 
