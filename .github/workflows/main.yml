@@ -16,18 +16,8 @@ jobs:
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
+          
+      - run: npm start
+      - run: npm run cypress-e2e
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        timeout-minutes: 30
-        with:
-          project: app
-          browser: chrome
-          headless: true
-          # we have already installed all dependencies above
-          install: true
-          build: npm run build
-          start: npm run start
-          command: npm run cypress-e2e
-          # quote the url to be safe against YML parsing surprises
-          wait-on: 'http://localhost:3000'
+     
