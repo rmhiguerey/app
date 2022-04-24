@@ -14,10 +14,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - uses: actions/checkout@v3
-        with:
-          repository: rmhiguerey/cypress
-          path: ./.github/actions/cypress
-
-      - name: Run my action
-        uses: ./.github/actions/cypress/main
+  call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/main.yml
