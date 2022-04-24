@@ -15,11 +15,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2.9.7
+        uses: ./
         timeout-minutes: 30
         with:
-          project: rmhiguerey/cypress
-          install-command : npm install
           browser: chrome
           headless: true
           # we have already installed all dependencies above
