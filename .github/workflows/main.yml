@@ -9,17 +9,13 @@ jobs:
     
       - name: Checkout
         uses: actions/checkout@v2.4.2
+        with:
+          repository: rmhiguerey/app
       
       - name: Checkout
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
-          
-          
-      - name: Cypress install
-        uses: cypress-io/github-action@v2
-        with:
-          runTests: false
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
