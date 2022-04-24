@@ -20,5 +20,7 @@ jobs:
       - name: Cypress
         uses: cypress-io/github-action@v2.9.7
         with:
-           wait-on: "http://localhost:3000/"
+         uses: actions/checkout@v2.4.2
+         run: npm start
+   
 
