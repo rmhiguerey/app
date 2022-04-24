@@ -11,7 +11,7 @@ jobs:
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
     - run: npm install
-    - run: npm start&&
+    - run: npm start&
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
@@ -20,6 +20,6 @@ jobs:
 
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
-      with:
-        wait-on: "http://localhost:3000/"
+      #with:
+        #wait-on: "http://localhost:3000/"
 
