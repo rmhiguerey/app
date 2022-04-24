@@ -20,7 +20,7 @@ jobs:
       - name: Cypress
         uses: cypress-io/github-action@v2.9.7
         with:
-         directory: /home/runner/work/app/app
+         working-directory: /home/runner/work/app/app
          start: npm start
    
 
