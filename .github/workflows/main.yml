@@ -17,11 +17,12 @@ jobs:
     - uses: actions/checkout@main
       with: 
          repository: rmhiguerey/cypress
-    - run: npm install
+
 
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
       with:
+        install: true
         browser: chrome
         headless: true
         config-file: cypress.json
