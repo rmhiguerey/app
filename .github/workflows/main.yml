@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress Tests2
 
 on:
   workflow_dispatch:
@@ -16,7 +16,6 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v2.9.7
-
         timeout-minutes: 30
         with:
           repository: rmhiguerey/cypress
