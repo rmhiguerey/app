@@ -10,8 +10,6 @@ jobs:
               
       - name: Checkout
         uses: actions/checkout@v2.4.2
-        with:
-         path: frontend
       
       - name: Checkout cypress
         uses: actions/checkout@main
