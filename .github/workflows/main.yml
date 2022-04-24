@@ -8,15 +8,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Install dependency
+        run: npm install
+   
 
       - name: Checkout
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
-          
-      - name: Install Dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm ci
+            
+      - name: Install dependency
+        run: npm install
+
         
       - name: Cypress run
         uses: cypress-io/github-action@v2
@@ -26,6 +30,6 @@ jobs:
           headless: true
           # we have already installed all dependencies above
           install: false
-          start: npm run start
+          start: npm cypress run
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:3000'
