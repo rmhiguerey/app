@@ -1,13 +1,29 @@
-name: Cypress Test
-on: [push]
-jobs:
+name: Cypress Tests
 
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    types: ["opened", "synchronize"]
+    
+jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.4.2
-      - name: Cypress.io
-        uses: cypress-io/github-action@v2.9.7
+        uses: actions/checkout@v2
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        timeout-minutes: 30
         with:
-          start: npm start
+          repocitory: rmhiguerey/cypress
+          path: ./cypress
+          browser: chrome
+          headless: true
+          # we have already installed all dependencies above
+          install: false
+          start: npm run start
+          # quote the url to be safe against YML parsing surprises
+          wait-on: 'http://localhost:3000'
