@@ -6,16 +6,9 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-    
-              
+     
       - name: Checkout
         uses: actions/checkout@v2.4.2
-
-      - run: npm install
-      - run: npm start
-  test:
-    runs-on: ubuntu-latest
-    steps:
 
       - name: Checkout cypress
         uses: actions/checkout@main
@@ -29,7 +22,7 @@ jobs:
           browser: chrome
           headless: true
           # we have already installed all dependencies above
-          install: false
+          install: true
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:3000'
 
