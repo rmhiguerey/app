@@ -10,13 +10,19 @@ jobs:
               
       - name: Checkout
         uses: actions/checkout@v2.4.2
+        with: 
+          run: npm install
       
       - name: Checkout cypress
         uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
 
- 
+      - name: Cypress dependencies
+        uses: cypress-io/github-action@v2.9.7
+        with:
+          runTest: false
+        
       - name: Cypress run
         uses: cypress-io/github-action@v2.9.7
         timeout-minutes: 30
