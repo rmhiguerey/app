@@ -13,13 +13,15 @@ jobs:
         with: 
           repository: rmhiguerey/cypress
 
-      - name: Cypress
-        uses: cypress-io/github-action@v2.9.7
-        with:
-          wait-on: "http://localhost:3000/"
+     # - name: Cypress
+      #  uses: cypress-io/github-action@v2.9.7
+      #  with:
+       #   wait-on: "http://localhost:3000/"
+          
 
       - name: Checkout App
-        uses: actions/checkout@v2.4.2
-      - run: npm install 
-      - run: npm start&
+        run: |
+         npm install 
+         npm start
+         npm cypress-e2e
 
