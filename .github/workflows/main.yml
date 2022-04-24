@@ -1,25 +1,30 @@
 name: Cypress Tests2
 
 on: [push]
-     
 jobs:
-  setup:
+
+ start:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+    
+    - name: Checkout
+      uses: actions/checkout@v2.4.2
+    - run: npm install
+    - run: npm start
+
+ cypress-run:
+    needs: start
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Checkout Cypress
+        uses: actions/checkout@main
         with: 
           repository: rmhiguerey/cypress
-      - run: npm run cypress-e2e
-      
-  build:
-    needs: setup
-    runs-on: ${{matrix.os}}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    steps:
-      - uses: actions/checkout@v1
-      - run: |
-          ./start.sh
-          ./test.sh
-        shell: bash
+
+      - name: Cypress
+        uses: cypress-io/github-action@v2.9.7
+        with:
+         wait-on: "http://localhost:3000/"
+         
+ 
