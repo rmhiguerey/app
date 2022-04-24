@@ -19,7 +19,6 @@ jobs:
         timeout-minutes: 30
         with:
           repocitory: rmhiguerey/cypress
-          path: ./cypress
           browser: chrome
           headless: true
           # we have already installed all dependencies above
