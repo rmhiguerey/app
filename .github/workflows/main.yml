@@ -20,7 +20,7 @@ jobs:
       - name: Cypress
         uses: cypress-io/github-action@v2.9.7
         with:
-         uses: actions/checkout@v2.4.2
-         run: npm start
+         directory: /home/runner/work/app/app
+         start: npm start
    
 
