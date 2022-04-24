@@ -19,6 +19,7 @@ jobs:
         timeout-minutes: 30
         with:
           project: rmhiguerey/cypress
+          install-command : npm install
           browser: chrome
           headless: true
           # we have already installed all dependencies above
