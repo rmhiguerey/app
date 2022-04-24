@@ -21,6 +21,6 @@ jobs:
           headless: true
           # we have already installed all dependencies above
           install: true
-          start: npm run start
+          start: npm run ./node_modules/.bin/json-server --static . data.json -m middleware.js --config json-server.json
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:3000'
