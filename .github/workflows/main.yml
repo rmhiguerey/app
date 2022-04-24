@@ -21,7 +21,6 @@ jobs:
         uses: cypress-io/github-action@v2
         timeout-minutes: 30
         with:
-          repository: ./rmhiguerey/cypress
           browser: chrome
           headless: true
           # we have already installed all dependencies above
