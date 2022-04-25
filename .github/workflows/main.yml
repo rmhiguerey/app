@@ -5,12 +5,7 @@ on: [push]
 jobs:
 
  start:
-    runs-on: ubuntu-latest
-    
-    container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
-      options: --user 1001
-      
+    runs-on: ubuntu-latest     
     steps:
     
     #- name: Checkout
