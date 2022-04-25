@@ -17,7 +17,9 @@ jobs:
     - uses: actions/checkout@main
       with: 
          repository: rmhiguerey/cypress
-         run: npm cypress-e2e
+         
+    - run: npm install
+    - run: npm cypress-e2e
 
 
     #- name: Cypress
