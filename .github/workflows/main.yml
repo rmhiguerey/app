@@ -13,6 +13,10 @@ jobs:
     - run: npm install
     - run: npm start &
     
+    - uses: wei/curl@v1.1.1
+      with:
+        args: "http://localhost:3000"
+    
     #- name: Checkout Cypress
     - uses: actions/checkout@main
       with: 
@@ -27,9 +31,6 @@ jobs:
       with:
         port: 3000
         
-    - uses: wei/curl@v1.1.1
-      with:
-        args: "http://localhost:3000"
     
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
