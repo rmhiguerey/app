@@ -22,7 +22,7 @@ jobs:
          
     - run: npm install
     - run: npm start&
-      working-directory: /usr/bin/git config --global --add safe.directory /home/runner/work/app/app
+      working-directory: /home/runner/work/app/app
 
     - run: npm run cypress-e2e
       
