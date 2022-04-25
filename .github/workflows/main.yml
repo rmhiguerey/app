@@ -17,6 +17,10 @@ jobs:
     - uses: actions/checkout@main
       with: 
          repository: rmhiguerey/cypress
+    
+    - uses: actions/setup-node@v1
+      with:
+          node-version: 12
          
     - uses: nrukavkov/open-ports-check-action@v1
       with:
