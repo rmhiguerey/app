@@ -21,7 +21,9 @@ jobs:
     - uses: actions/setup-node@v3.1.1
       with:
         node-version: 12
+        
     - uses: actions/checkout@v2.4.2
+    - run: npm install
     
     - uses: nrukavkov/open-ports-check-action@v1
       with:
@@ -30,11 +32,10 @@ jobs:
     #- name: Cypress
     - uses: cypress-io/github-action@v2
       with:
-        start: npm start 
         install: true
         headless: true
+        start: npm start 
         browser: chromium
-        config-file: cypress.json
         
 
 
