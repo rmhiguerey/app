@@ -13,9 +13,8 @@ jobs:
     - run: npm install
     - run: npm start &
     
-    - uses: wei/curl@v1.1.1
-      with:
-        args: "http://localhost:3000"
+    - run: |
+          curl --fail --request GET --url "http://localhost:3000"
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
