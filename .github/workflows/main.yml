@@ -22,6 +22,8 @@ jobs:
       with:
         node-version: 12
         
+    - run: npx browserslist@latest --update-db
+        
     - uses: nrukavkov/open-ports-check-action@v1
       with:
         port: 3000
