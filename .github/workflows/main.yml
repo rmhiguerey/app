@@ -6,6 +6,11 @@ jobs:
 
  start:
     runs-on: ubuntu-latest
+    
+    container:
+      image: cypress/browsers:node12.16.1-chrome80-ff73
+      options: --user 1001
+      
     steps:
     
     #- name: Checkout
@@ -18,16 +23,20 @@ jobs:
       with: 
          repository: rmhiguerey/cypress
          
+    - uses: actions/setup-node@v3.1.1
+      with:
+        node-version: 12
+         
     - uses: nrukavkov/open-ports-check-action@v1
       with:
         port: 3000
 
     #- name: Cypress
-    - uses: cypress-io/github-action@v2.9.7
+    - uses: cypress-io/github-action@v2
       with:
         install: true
-        browser: chrome
         headless: true
+        browser: chromium
         config-file: cypress.json
         
 
