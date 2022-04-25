@@ -19,7 +19,7 @@ jobs:
          repository: rmhiguerey/cypress
          
     - run: npm install
-    - run: npm cypress-e2e
+    - run: npm run cypress-e2e
 
 
     #- name: Cypress
