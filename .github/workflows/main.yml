@@ -27,10 +27,11 @@ jobs:
         port: 3000
 
     #- name: Cypress
-    - uses: cypress-io/github-action@v2.9.7
+    - uses: cypress-io/github-action@v2
       with:
         install: true
         headless: true
+        browser: Chromium
         config-file: cypress.json
         
 
