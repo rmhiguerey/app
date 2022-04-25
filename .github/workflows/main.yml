@@ -17,14 +17,20 @@ jobs:
     - uses: actions/checkout@main
       with: 
          repository: rmhiguerey/cypress
+         
+    - name: Chrome headless
+      uses: ./
+      with:
+          browser: chrome
+          headless: true
 
     #- name: Cypress
-    - uses: cypress-io/github-action@v2.9.7
-      with:
-        install: true
-        browser: chrome
-        headless: true
-        config-file: cypress.json
+    #- uses: cypress-io/github-action@v2.9.7
+     # with:
+      #  install: true
+      #  browser: chrome
+      #  headless: true
+        #config-file: cypress.json
         
 
 
