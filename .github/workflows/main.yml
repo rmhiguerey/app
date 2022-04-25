@@ -26,7 +26,9 @@ jobs:
     - uses: nrukavkov/open-ports-check-action@v1
       with:
         port: 3000
-
+        
+    - uses: wei/curl@v1.1.1
+    
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
       with:
