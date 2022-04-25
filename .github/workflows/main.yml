@@ -11,15 +11,16 @@ jobs:
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
     - run: npm install
-    
-    - uses: BerniWittmann/background-server-action@v1.0.4
-      with:
-       command: npm start
+    - run: npm start &
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
       with: 
          repository: rmhiguerey/cypress
+         
+    - uses: nrukavkov/open-ports-check-action@v1
+      with:
+        port: 3000
 
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
