@@ -13,8 +13,7 @@ jobs:
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
     - run: npm install
-    - run: node app.js
-    #- run: npm start
+    - run: npm start
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
