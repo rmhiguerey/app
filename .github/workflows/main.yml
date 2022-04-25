@@ -27,7 +27,7 @@ jobs:
         port: 3000
 
     #- name: Cypress
-    - uses: cypress-io/github-action@v2
+    - uses: cypress-io/github-action@v2.8.2
       with:
         install: true
         headless: true
