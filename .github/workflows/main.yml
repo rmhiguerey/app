@@ -13,8 +13,7 @@ jobs:
 
           
     - run: npm install
-    - run: npm start&
-      working-directory: examples/chrome
+   
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
@@ -22,9 +21,11 @@ jobs:
          repository: rmhiguerey/cypress
          
     - run: npm install
-    - run: npm run cypress-e2e
-      working-directory: examples/chrome
+    - run: npm start&
+      working-directory: /usr/bin/git config --global --add safe.directory /home/runner/work/app/app
 
+    - run: npm run cypress-e2e
+      
     #- name: Cypress
     #- uses: cypress-io/github-action@v2.9.7
      # with:
