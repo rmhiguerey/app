@@ -13,19 +13,19 @@ jobs:
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
     - run: npm install
-    - run: node app.js&
+    - run: node app.js
     #- run: npm start
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
       with: 
          repository: rmhiguerey/cypress
-
+         run: npm install
 
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
       with:
-        install: true
+        install: false
         browser: chrome
         headless: true
         config-file: cypress.json
