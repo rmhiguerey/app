@@ -9,9 +9,9 @@ jobs:
     steps:
     
     #- name: Checkout
-    #- uses: actions/checkout@v2.4.2
-    #- run: npm install
-    #- run: npm start &
+    - uses: actions/checkout@v2.4.2
+    - run: npm install
+    - run: npm start &
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
@@ -21,9 +21,6 @@ jobs:
     - uses: actions/setup-node@v3.1.1
       with:
         node-version: 12
-        
-    - uses: actions/checkout@v2.4.2
-    - run: npm install
     
     - uses: nrukavkov/open-ports-check-action@v1
       with:
@@ -34,8 +31,7 @@ jobs:
       with:
         install: true
         headless: true
-        start: npm start 
         browser: chromium
-        
+        wait-on: http://localhost:3000
 
 
