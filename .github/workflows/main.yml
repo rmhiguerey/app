@@ -25,7 +25,7 @@ jobs:
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
       with:
-        install: true
+        install: false
         browser: chrome
         headless: true
         config-file: cypress.json
