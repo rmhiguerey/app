@@ -11,9 +11,10 @@ jobs:
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
     - run: npm install
+    
     - uses: BerniWittmann/background-server-action@v1.0.4
       with:
-       start: npm start &
+       start: npm start
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
