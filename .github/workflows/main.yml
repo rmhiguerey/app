@@ -10,10 +10,8 @@ jobs:
     
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
-
-          
     - run: npm install
-   
+    - run: npm start &
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
@@ -21,9 +19,6 @@ jobs:
          repository: rmhiguerey/cypress
          
     - run: npm install
-    - run: npm start&
-      working-directory: /home/runner/work/app/app
-
     - run: npm run cypress-e2e
       
     #- name: Cypress
