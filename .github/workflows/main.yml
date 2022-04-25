@@ -17,12 +17,8 @@ jobs:
     - uses: actions/checkout@main
       with: 
          repository: rmhiguerey/cypress
-         
-    - name: Chrome headless
-      uses: ./
-      with:
-          browser: chrome
-          headless: true
+         run: npm cypress-e2e
+
 
     #- name: Cypress
     #- uses: cypress-io/github-action@v2.9.7
