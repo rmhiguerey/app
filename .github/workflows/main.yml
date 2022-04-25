@@ -21,7 +21,7 @@ jobs:
          repository: rmhiguerey/cypress
          
     - run: npm install
-    - run: node_modules/.bin/cypress open
+    - run: npx cypress run
 
     #- name: Cypress
     #- uses: cypress-io/github-action@v2.9.7
