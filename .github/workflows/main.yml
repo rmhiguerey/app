@@ -10,8 +10,8 @@ jobs:
     
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
-    - run: npm install
-    - run: npm start &
+    #- run: npm install
+    #- run: npm start &
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
@@ -21,8 +21,6 @@ jobs:
     - uses: actions/setup-node@v3.1.1
       with:
         node-version: 12
-        
-    - run: npm install --save-dev netlify-plugin-cypress
     
     - uses: nrukavkov/open-ports-check-action@v1
       with:
@@ -31,6 +29,7 @@ jobs:
     #- name: Cypress
     - uses: cypress-io/github-action@v2
       with:
+        start: npm start 
         install: true
         headless: true
         browser: chromium
