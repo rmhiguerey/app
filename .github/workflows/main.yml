@@ -32,6 +32,5 @@ jobs:
         install: true
         headless: true
         browser: chromium
-        wait-on: http://localhost:3000
-
+        wait-on: 'http://localhost:8080'
 
