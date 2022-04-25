@@ -1,5 +1,5 @@
 /* global Vue, Vuex, axios, VueRouter, Sortable */
-/* eslint-disable no-console  /*/
+/* eslint-disable no-console/*/
 (function () {
   Vue.use(Vuex);
 
