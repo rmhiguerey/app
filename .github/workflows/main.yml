@@ -5,18 +5,16 @@ on: [push]
 jobs:
 
  start:
-    runs-on: ubuntu-latest
-    
-    container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
-      options: --user 1001
-      
+    runs-on: ubuntu-latest     
     steps:
     
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
     - run: npm install
     - run: npm start &
+    
+    - run: |
+          curl --fail --request GET --url "http://localhost:3000"
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
@@ -26,18 +24,18 @@ jobs:
     - uses: actions/setup-node@v3.1.1
       with:
         node-version: 12
-         
+    - run: npm install
+        
     - uses: nrukavkov/open-ports-check-action@v1
       with:
         port: 3000
-
+        
+    
     #- name: Cypress
-    - uses: cypress-io/github-action@v2
+    - uses: cypress-io/github-action@v2.9.7
       with:
         install: true
         headless: true
         browser: chromium
-        config-file: cypress.json
-        
 
 
