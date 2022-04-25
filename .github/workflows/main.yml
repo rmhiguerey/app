@@ -23,6 +23,10 @@ jobs:
       with: 
          repository: rmhiguerey/cypress
          
+    - uses: actions/setup-node@v3.1.1
+      with:
+        node-version: 12
+         
     - uses: nrukavkov/open-ports-check-action@v1
       with:
         port: 3000
