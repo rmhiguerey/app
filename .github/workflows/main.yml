@@ -10,13 +10,11 @@ jobs:
     
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-          node-version: ${{ matrix.node-version }}
+
           
     - run: npm install
     - run: npm start&
+      working-directory: examples/chrome
     
     #- name: Checkout Cypress
     - uses: actions/checkout@main
@@ -25,7 +23,7 @@ jobs:
          
     - run: npm install
     - run: npm run cypress-e2e
-
+      working-directory: examples/chrome
 
     #- name: Cypress
     #- uses: cypress-io/github-action@v2.9.7
