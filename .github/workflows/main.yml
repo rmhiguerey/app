@@ -21,14 +21,15 @@ jobs:
          repository: rmhiguerey/cypress
          
     - run: npm install
+    - run: node_modules/.bin/cypress open
 
     #- name: Cypress
-    - uses: cypress-io/github-action@v2.9.7
-      with:
-        install: false
-        browser: chrome
-        headless: true
-        config-file: cypress.json
+    #- uses: cypress-io/github-action@v2.9.7
+     # with:
+      #  install: false
+      #  browser: chrome
+       # headless: true
+        #config-file: cypress.json
         
 
 
