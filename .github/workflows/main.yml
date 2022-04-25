@@ -30,7 +30,6 @@ jobs:
     - uses: cypress-io/github-action@v2.9.7
       with:
         install: true
-        browser: chrome
         headless: true
         config-file: cypress.json
         
