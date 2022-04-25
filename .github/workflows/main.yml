@@ -29,7 +29,7 @@ jobs:
         
     - uses: wei/curl@v1.1.1
       with:
-        args: http://localhost:3000
+        args: "http://localhost:3000"
     
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
