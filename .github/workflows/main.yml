@@ -10,32 +10,13 @@ jobs:
     
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
-    - run: npm install
-    - run: npm start &
-    
-    - run: |
-          curl --fail --request GET --url "http://localhost:3000"
-    
-    #- name: Checkout Cypress
-    - uses: actions/checkout@main
-      with: 
-         repository: rmhiguerey/cypress
-         
-    - uses: actions/setup-node@v3.1.1
-      with:
-        node-version: 12
-    - run: npm install
-        
-    - uses: nrukavkov/open-ports-check-action@v1
-      with:
-        port: 3000
-        
-    
+
     #- name: Cypress
     - uses: cypress-io/github-action@v2.9.7
       with:
+        start: npm start
         install: true
         headless: true
-        browser: chromium
+ 
 
 
