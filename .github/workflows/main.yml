@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2.4.2
     - run: npm install
     - run: npm start &
-    
+    - run: curl ifconfig.me
     - run: curl --fail --request GET --url "http://localhost:3000"
 
     #- name: Cypress
