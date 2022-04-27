@@ -23,6 +23,6 @@ jobs:
     - uses: cypress-io/github-action@v2
       with:
         browser: chrome
-        env: host=localhost,port=8080
+        env: host=20.232.162.178,port=8080
 
 
