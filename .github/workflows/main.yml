@@ -12,6 +12,8 @@ jobs:
     - uses: actions/checkout@v2.4.2
     - run: npm install
     - run: npm start &
+    
+    - run: curl --fail --request GET --url "https://localhost:3000"
 
     #- name: Cypress
     - uses: actions/checkout@v2.4.2
