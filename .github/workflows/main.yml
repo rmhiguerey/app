@@ -19,12 +19,7 @@ jobs:
        repository: rmhiguerey/cypress
        
     - run: npm install
-       
-    -  uses: cypress-io/github-action@v2.9.7
-       with:
-
-        install: true
-        headless: true
+    - run: npm run cypress-e2e
  
 
 
