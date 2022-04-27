@@ -23,6 +23,7 @@ jobs:
 
     - uses: cypress-io/github-action@v2
       with:
+        browser: chrome
         env: host=localhost,port=3000
 
 
