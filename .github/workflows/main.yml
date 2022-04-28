@@ -9,12 +9,12 @@ jobs:
    
     steps:
     
-    - name: Checkout
+    - name: Checkout Web
       uses: actions/checkout@v2.4.2
       with:
         path: ./frontend  
         
-    - name: install npm
+    - name: Web install npm
       run: | 
              cd frontend
              ls
@@ -22,21 +22,17 @@ jobs:
              npm start &
 
 
-    - name: Cypress
+    - name: Checkout Cypress
       uses: actions/checkout@v2.4.2
       with:
        repository: rmhiguerey/cypress
        path: ./cypress
     
-    - name: cypress install npm 
+    - name: Cypress install npm 
       run: | 
              cd cypress
              ls
              npm install
              npx cypress run
              
-    #- run: npm install
-    #- run: npx cypress run
-
-    - run: curl --fail --request GET --url "http://localhost:3000"
 
