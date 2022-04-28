@@ -12,10 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.4.2
       with:
-        path: ./frontend
+        path: ./frontend      
         
-    - run: cd frontend
-    - run: ls
+        run: | 
+             cd frontend
+             ls
     
     - run: npm install
     - run: npm start &
