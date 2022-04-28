@@ -1,6 +1,6 @@
 name: Cypress Tests2
 
-on: [push]
+on: [pull_request]
 
 jobs:
 
@@ -33,6 +33,14 @@ jobs:
              cd cypress
              ls
              npm install
-             npx cypress run --record --key bb5e29b2-35c0-4cef-a20d-5cf4b5257a27
              
-
+    - name: Cypress.io
+      uses: cypress-io/github-action@v2.9.7
+      with:
+       working-directory: /home/runner/work/app/app/cypress
+       record: true
+       browser: chrome
+       
+      env:
+          CYPRESS_RECORD_KEY: bb5e29b2-35c0-4cef-a20d-5cf4b5257a27 
+      
