@@ -20,8 +20,8 @@ jobs:
     - uses: actions/checkout@v2.4.2
       with:
        repository: rmhiguerey/cypress
-    - run: npm install
-    - run: npx cypress run
+    #- run: npm install
+    #- run: npx cypress run
 
     - run: curl --fail --request GET --url "http://localhost:3000"
 
