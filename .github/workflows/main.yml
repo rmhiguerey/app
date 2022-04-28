@@ -33,6 +33,6 @@ jobs:
              cd cypress
              ls
              npm install
-             npx cypress run --record --key b044e053-d66f-4a4b-9fbe-42a771aa3269
+             npx cypress run --record --key bb5e29b2-35c0-4cef-a20d-5cf4b5257a27
              
 
