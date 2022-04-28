@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v2.4.2
       with:
        repository: rmhiguerey/cypress
-       path: /home/runner/work/app/cypress
+       path: /cypress
        
     #- run: npm install
     #- run: npx cypress run
