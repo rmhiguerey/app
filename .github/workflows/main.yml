@@ -18,18 +18,23 @@ jobs:
       run: | 
              cd frontend
              ls
-    
-    - run: npm install
-    - run: npm start &
-    - run: curl ifconfig.me
+             npm install
+             npm start &
 
 
-    #- name: Cypress
-    - uses: actions/checkout@v2.4.2
+    - name: Cypress
+      uses: actions/checkout@v2.4.2
       with:
        repository: rmhiguerey/cypress
        path: ./cypress
-       
+    
+    - name: cypress install npm 
+      run: | 
+             cd cypress
+             ls
+             npm install
+             npx cypress run
+             
     #- run: npm install
     #- run: npx cypress run
 
