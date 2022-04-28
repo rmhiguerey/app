@@ -1,6 +1,6 @@
 name: Cypress Tests2
 
-on: [pull_request]
+on: [push]
 
 jobs:
 
@@ -33,6 +33,7 @@ jobs:
              cd cypress
              ls
              npm install
+             
              
     - name: Cypress.io
       uses: cypress-io/github-action@v2.9.7
