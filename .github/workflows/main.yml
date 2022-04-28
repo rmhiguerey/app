@@ -11,6 +11,9 @@ jobs:
     
     #- name: Checkout
     - uses: actions/checkout@v2.4.2
+      with:
+        path: ./cypress
+        
     - run: npm install
     - run: npm start &
     - run: curl ifconfig.me
