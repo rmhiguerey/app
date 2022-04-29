@@ -45,8 +45,8 @@ jobs:
       env:
           CYPRESS_RECORD_KEY: 86b28930-8548-45bf-9496-d464a69e822a
           COMMIT_INFO_BRANCH: ${{github.head_ref}}
-          COMMIT_INFO_MESSAGE: ${{github.event_name}}
+          COMMIT_INFO_MESSAGE: ${{github.head_ref}}
           COMMIT_INFO_AUTHOR: ${{github.actor}}
           COMMIT_INFO_SHA: ${{github.sha}}
-          
+          COMMIT_INFO_REMOTE: ${{github.repositoryUrl}}
 
