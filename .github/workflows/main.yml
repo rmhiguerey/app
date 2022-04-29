@@ -22,7 +22,7 @@ jobs:
              npm start &
 
 
-    - name: Checkout Cypress
+    - name: Checkout Cypress ${{ github.head_ref }}
       uses: actions/checkout@v2.4.2
       with:
        repository: rmhiguerey/cypress
@@ -44,5 +44,5 @@ jobs:
        
       env:
           CYPRESS_RECORD_KEY: bb5e29b2-35c0-4cef-a20d-5cf4b5257a27
-          COMMIT_INFO_MESSAGE : ${{ github.event.push.title }}
-          COMMIT_INFO_SHA: ${{ github.event.push.head.sha }}
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
+          GITHUB_REF: ${{ github.ref }}
