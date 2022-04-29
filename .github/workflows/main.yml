@@ -44,5 +44,5 @@ jobs:
        
       env:
           CYPRESS_RECORD_KEY: bb5e29b2-35c0-4cef-a20d-5cf4b5257a27
-          GITHUB_HEAD_REF: ${{ github.head_ref }}
-          GITHUB_REF: ${{ github.ref }}
+          COMMIT_INFO_BRANCH: 123456
+          COMMIT_INFO_MESSAGE: message
