@@ -1,6 +1,7 @@
+
 name: Cypress Tests2
 
-on: [push]
+on: [pull_request]
 
 jobs:
 
@@ -20,8 +21,6 @@ jobs:
              ls
              npm install
              npm start &
-
-
     - name: Checkout Cypress
       uses: actions/checkout@v2.4.2
       with:
@@ -43,7 +42,9 @@ jobs:
        browser: chrome
        
       env:
-      
-          CYPRESS_RECORD_KEY: bb5e29b2-35c0-4cef-a20d-5cf4b5257a27
-          COMMIT_INFO_MESSAGE : ${{ github.event.push.title }}
-          COMMIT_INFO_SHA: ${{ github.event.push.head.sha }}
+          CYPRESS_RECORD_KEY: 86b28930-8548-45bf-9496-d464a69e822a
+          COMMIT_INFO_BRANCH: ${{github.head_ref}}
+          COMMIT_INFO_MESSAGE: ${{github.head_ref}}
+          COMMIT_INFO_AUTHOR: ${{github.actor}}
+          COMMIT_INFO_SHA: ${{github.sha}}
+          COMMIT_INFO_REMOTE: ${{github.repositoryUrl}}
