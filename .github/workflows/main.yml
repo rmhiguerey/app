@@ -46,6 +46,6 @@ jobs:
           COMMIT_INFO_BRANCH: ${{github.head_ref}}
           COMMIT_INFO_MESSAGE: ${{github.head_ref}}
           COMMIT_INFO_AUTHOR: ${{github.actor}}
-          COMMIT_INFO_SHA: ${{github.sha}}
+          COMMIT_INFO_SHA: ${{github.base_ref}}
           COMMIT_INFO_REMOTE: ${{github.repositoryUrl}}
-          #hola
+
