@@ -1,7 +1,7 @@
 
 name: Cypress Tests2
 
-on: [pull_request]
+on: [push]
 
 jobs:
 
@@ -20,6 +20,8 @@ jobs:
       run: | 
              cd frontend
              ls
+             export COMMIT_INFO_BRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+             echo $COMMIT_INFO_BRANCH
              npm install
              npm start &
              
@@ -40,7 +42,7 @@ jobs:
       uses: cypress-io/github-action@v2.9.7
       with:
        working-directory: /home/runner/work/app/app/cypress
-       record: true
+       #record: true
        browser: chrome
        
       env:
