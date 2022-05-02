@@ -25,7 +25,7 @@ jobs:
              npm start &
              
     - name: Env
-      run: | 
+      env: | 
              cd frontend
              ls
              echo "hola"
