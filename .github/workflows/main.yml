@@ -32,8 +32,7 @@ jobs:
              cd frontend
              ls
              echo "hola"
-             echo MY_ENV_1="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
-             echo "$MY_ENV_1"
+             echo "GO_VERSION=$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')" >> $GITHUB_ENV
 
 
     - name: Checkout Cypress
@@ -63,4 +62,4 @@ jobs:
         COMMIT_INFO_REMOTE: https://github.com/rmhiguerey/app.git
         
     - name: Variables
-      run: echo "$MY_ENV_1"
+      run: echo ${{ env.GO_VERSION }}
