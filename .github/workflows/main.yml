@@ -21,6 +21,10 @@ jobs:
              ls
              npm install
              npm start &
+             
+    - name: Set env       
+      run: echo "COMMIT_INFO_MESSAGE='$(git log -1 --pretty=%B)'" >> $GITHUB_ENV    
+            
     - name: Checkout Cypress
       uses: actions/checkout@v2.4.2
       with:
@@ -33,9 +37,6 @@ jobs:
              ls
              npm install
              
-    - name: Set env       
-      run: echo "COMMIT_INFO_MESSAGE='$(git log -1 --pretty=%B)'" >> $GITHUB_ENV
-    
      
     - name: Cypress.io
       uses: cypress-io/github-action@v2.9.7
