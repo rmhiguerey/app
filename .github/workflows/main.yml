@@ -29,6 +29,7 @@ jobs:
              ls
              echo "hola"
              echo "GO_VERSION=$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')" >> $GITHUB_ENV
+             echo "MESSAGE= $(git log -1 --pretty=%B)"
              echo "BRANCH=$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')" >> $GITHUB_ENV
              echo "EMAIL=$(git log -1 --pretty=%ae)" >> $GITHUB_ENV
              echo "AUTHOR=$(git log -1 --pretty=%an)" >> $GITHUB_ENV
@@ -54,7 +55,7 @@ jobs:
        record: true
        browser: chrome
       env:
-        COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+        COMMIT_INFO_MESSAGE: ${{ env.MESSAGE }}
         COMMIT_INFO_BRANCH: ${{ env.BRANCH }}
         COMMIT_INFO_AUTHOR: ${{ env.AUTHOR }}
         COMMIT_INFO_SHA: ${{ env.SHA }}
