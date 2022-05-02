@@ -16,7 +16,7 @@ jobs:
         path: ./frontend  
         
     - name: Set env       
-      run: echo COMMIT_INFO_MESSAGE="$(git log -1 --pretty=%B)" >> $GITHUB_ENV    
+      run: echo COMMIT_INFO_MESSAGE="$(COMMIT_INFO_MESSAGE)" >> $GITHUB_ENV    
             
         
     - name: Web install npm
