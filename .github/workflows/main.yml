@@ -55,11 +55,17 @@ jobs:
              cd frontend
              ls
              echo "hola"
+             export COMMIT_BRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+             export COMMIT_MESSAGE="$(git log -1 --pretty=%B)"
+             export COMMIT_EMAIL="$(git log -1 --pretty=%ae)"
+             export COMMIT_AUTHOR="$(git log -1 --pretty=%an)"
+             export COMMIT_SHA="$(git log -1 --pretty=%H)"
+             export COMMIT_REMOTE="$(git config --get remote.origin.url)"
       env:
           CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
-         # COMMIT_INFO_BRANCH: "$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
-          COMMIT_INFO_MESSAGE: "$(git log -1 --pretty=%B)"
-          COMMIT_INFO_EMAIL: "$(git log -1 --pretty=%ae)"
-          COMMIT_INFO_AUTHOR: "$(git log -1 --pretty=%an)"
-          COMMIT_INFO_SHA: "$(git log -1 --pretty=%H)"
-          COMMIT_INFO_REMOTE: "$(git config --get remote.origin.url)"
+          COMMIT_INFO_BRANCH: ${{COMMIT_BRANCH}}
+          COMMIT_INFO_MESSAGE: ${{COMMIT_MESSAGE}}
+          COMMIT_INFO_EMAIL: ${{COMMIT_EMAIL}}
+          COMMIT_INFO_AUTHOR: ${{COMMIT_AUTHOR}}
+          COMMIT_INFO_SHA: ${{COMMIT_SHA}}
+          COMMIT_INFO_REMOTE: ${{COMMIT_REMOTE}}
