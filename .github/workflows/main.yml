@@ -24,13 +24,13 @@ jobs:
              npm install
              npm start &
              
-    - name: Env
+    - name: Variables
       run: | 
              cd frontend
              ls
              echo "hola"
              export COMMIT_INFO_BRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
-             echo "$COMMIT_INFO_BRANCH"
+             echo "$COMMIT_INFO_BRANCH_test"
 
 
     - name: Checkout Cypress
@@ -58,3 +58,6 @@ jobs:
         CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COMMIT_INFO_REMOTE: https://github.com/rmhiguerey/app.git
+        
+    - name: Variables
+      run: echo "$COMMIT_INFO_BRANCH_test"
