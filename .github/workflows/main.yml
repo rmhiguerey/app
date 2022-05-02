@@ -38,13 +38,28 @@ jobs:
       with:
        repository: rmhiguerey/cypress
        path: ./cypress
-    
+       
     - name: Cypress install npm 
       run: | 
              cd cypress
              ls
              npm install
-
-
-    - name: Env
-      run: echo $COMMIT_INFO_BRANCH
+    
+    - name: Cypress.io
+      uses: cypress-io/github-action@v2.9.7
+      with:
+       working-directory: /home/runner/work/app/app/cypress
+       #record: true
+       browser: chrome
+       command: | 
+             cd frontend
+             ls
+             echo "hola"
+      env:
+          CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
+          COMMIT_INFO_BRANCH: "$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+          COMMIT_INFO_MESSAGE: "$(git log -1 --pretty=%B)"
+          COMMIT_INFO_EMAIL: "$(git log -1 --pretty=%ae)"
+          COMMIT_INFO_AUTHOR: "$(git log -1 --pretty=%an)"
+          COMMIT_INFO_SHA: "$(git log -1 --pretty=%H)"
+          COMMIT_INFO_REMOTE: "$(git config --get remote.origin.url)"
