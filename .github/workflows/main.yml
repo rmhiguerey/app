@@ -57,7 +57,7 @@ jobs:
              echo "hola"
       env:
           CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
-          COMMIT_INFO_BRANCH: "$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+         # COMMIT_INFO_BRANCH: "$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
           COMMIT_INFO_MESSAGE: "$(git log -1 --pretty=%B)"
           COMMIT_INFO_EMAIL: "$(git log -1 --pretty=%ae)"
           COMMIT_INFO_AUTHOR: "$(git log -1 --pretty=%an)"
