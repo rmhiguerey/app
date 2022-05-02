@@ -16,7 +16,7 @@ jobs:
         path: ./frontend  
         
     - name: Set env       
-      run: echo COMMIT_INFO_MESSAGE="$(COMMIT_INFO_MESSAGE)" >> $GITHUB_ENV    
+      run: echo COMMIT_INFO_MBRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')" >> $GITHUB_ENV    
             
         
     - name: Web install npm
@@ -39,20 +39,20 @@ jobs:
              npm install
              
      
-    - name: Cypress.io
-      uses: cypress-io/github-action@v2.9.7
-      with:
-       working-directory: /home/runner/work/app/app/cypress
-       record: true
-       browser: chrome
+   # - name: Cypress.io
+    #  uses: cypress-io/github-action@v2.9.7
+   #   with:
+    #   working-directory: /home/runner/work/app/app/cypress
+       # record: true
+   #    browser: chrome
        
-      env:
-          CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
-          COMMIT_INFO_BRANCH: ${{github.head_ref}}
-          COMMIT_INFO_MESSAGE: ${{github.head_ref}}
-          COMMIT_INFO_AUTHOR: ${{github.actor}}
-          COMMIT_INFO_SHA: ${{github.sha}}
-          COMMIT_INFO_REMOTE: ${{github.event_path}}
+     # env:
+        #  CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
+         # COMMIT_INFO_BRANCH: ${{github.head_ref}}
+         # COMMIT_INFO_MESSAGE: ${{github.head_ref}}
+        #  COMMIT_INFO_AUTHOR: ${{github.actor}}
+        #  COMMIT_INFO_SHA: ${{github.sha}}
+        #  COMMIT_INFO_REMOTE: ${{github.event_path}}
           
     - name: Test
       run: echo $COMMIT_INFO_MESSAGE 
