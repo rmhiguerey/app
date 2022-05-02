@@ -1,7 +1,7 @@
 
 name: Cypress Tests2
 
-on: [pull_request]
+on: [push]
 
 jobs:
 
@@ -33,7 +33,10 @@ jobs:
              ls
              npm install
              
-             
+    - name: Set env       
+      run: echo "COMMIT_INFO_MESSAGE='$(git log -1 --pretty=%B)'" >> $GITHUB_ENV
+    
+     
     - name: Cypress.io
       uses: cypress-io/github-action@v2.9.7
       with:
@@ -48,5 +51,8 @@ jobs:
           COMMIT_INFO_AUTHOR: ${{github.actor}}
           COMMIT_INFO_SHA: ${{github.sha}}
           COMMIT_INFO_REMOTE: ${{github.event_path}}
+          
+    - name: Test
+      run: echo $COMMIT_INFO_BRANCH 
 
 
