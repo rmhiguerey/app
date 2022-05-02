@@ -52,6 +52,7 @@ jobs:
        #record: true
        browser: chrome
        command: | 
+             cd
              cd frontend
              ls
              echo "hola"
