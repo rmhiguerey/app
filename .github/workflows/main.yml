@@ -20,8 +20,8 @@ jobs:
       run: | 
              cd frontend
              ls
-             export COMMIT_INFO_BRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
-             echo $COMMIT_INFO_BRANCH
+             export COMMIT_INFO_BRANCH_test="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+             echo $COMMIT_INFO_BRANCH_test
              npm install
              npm start &
              
@@ -54,7 +54,7 @@ jobs:
           COMMIT_INFO_REMOTE: ${{github.event_path}}
           
     - name: Test
-      run:  echo $COMMIT_INFO_BRANCH
+      run:  echo $COMMIT_INFO_BRANCH_test
       
 
 
