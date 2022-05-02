@@ -55,6 +55,6 @@ jobs:
         COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
         COMMIT_INFO_BRANCH: ${{ github.head_ref }}
         COMMIT_INFO_SHA: ${{ github.sha }}
-        CYPRESS_RECORD_KEY: 4c1c4ca4-a873-4aa1-b3cc-3a460c6703a2
+        CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COMMIT_INFO_REMOTE: https://github.com/rmhiguerey/app.git
