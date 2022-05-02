@@ -25,8 +25,11 @@ jobs:
              npm start &
              
     - name: Env
-      run: echo "This is the $GITHUB_ENV environment variable"      
-             
+      run: | 
+             cd frontend
+             ls
+             COMMIT_INFO_BRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+             echo $COMMIT_INFO_BRANCH
 
      
 
