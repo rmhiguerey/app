@@ -25,7 +25,7 @@ jobs:
              npm start &
              
     - name: Env
-      env: | 
+      run: | 
              cd frontend
              ls
              echo "hola"
@@ -47,4 +47,4 @@ jobs:
 
 
     - name: Env
-      run: echo "$COMMIT_INFO_BRANCH"
+      run: echo $COMMIT_INFO_BRANCH
