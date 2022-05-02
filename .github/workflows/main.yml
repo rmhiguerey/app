@@ -16,7 +16,7 @@ jobs:
         path: ./frontend  
         
     - name: Set env       
-      run: echo COMMIT_INFO_MBRANCH= ${{github.head_ref}} >> $GITHUB_ENV    
+      run: echo "COMMIT_INFO_MESSAGE= github.head_ref" >> $GITHUB_ENV    
             
         
     - name: Web install npm
@@ -55,6 +55,6 @@ jobs:
         #  COMMIT_INFO_REMOTE: ${{github.event_path}}
           
     - name: Test
-      run: echo $COMMIT_INFO_MESSAGE 
+      run: echo $COMMIT_INFO_MESSAGE
 
 
