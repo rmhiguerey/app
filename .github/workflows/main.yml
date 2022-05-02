@@ -28,7 +28,7 @@ jobs:
       run: | 
              cd frontend
              ls
-             echo git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g'
+             git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g'
 
 
      
