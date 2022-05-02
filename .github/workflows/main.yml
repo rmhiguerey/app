@@ -32,7 +32,7 @@ jobs:
              cd frontend
              ls
              echo "hola"
-             export MY_ENV_1="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+             echo MY_ENV_1="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
              echo "$MY_ENV_1"
 
 
