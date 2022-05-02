@@ -52,7 +52,7 @@ jobs:
           COMMIT_INFO_REMOTE: ${{github.event_path}}
           
     - name: Test
-      run: echo "COMMIT_INFO_BRANCH , COMMIT_INFO_MESSAGE"
+      run: echo ${{github.head_ref}} ${{github.event_path}}
       
 
 
