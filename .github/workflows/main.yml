@@ -16,7 +16,7 @@ jobs:
         path: ./frontend  
         
     - name: Set env       
-      run: echo COMMIT_INFO_MBRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')" >> $GITHUB_ENV    
+      run: echo COMMIT_INFO_MBRANCH= ${{github.head_ref}} >> $GITHUB_ENV    
             
         
     - name: Web install npm
