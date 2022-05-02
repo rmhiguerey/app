@@ -49,25 +49,12 @@ jobs:
       uses: cypress-io/github-action@v2.9.7
       with:
        working-directory: /home/runner/work/app/app/cypress
-       #record: true
+       record: true
        browser: chrome
-       command: 
-          run | 
-             cd
-             cd frontend
-             ls
-             echo "hola"
-             export COMMIT_BRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
-             export COMMIT_MESSAGE="$(git log -1 --pretty=%B)"
-             export COMMIT_EMAIL="$(git log -1 --pretty=%ae)"
-             export COMMIT_AUTHOR="$(git log -1 --pretty=%an)"
-             export COMMIT_SHA="$(git log -1 --pretty=%H)"
-             export COMMIT_REMOTE="$(git config --get remote.origin.url)"
       env:
-          CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
-          COMMIT_INFO_BRANCH: $COMMIT_BRANCH
-          COMMIT_INFO_MESSAGE: $COMMIT_MESSAGE
-          COMMIT_INFO_EMAIL: $COMMIT_EMAIL
-          COMMIT_INFO_AUTHOR: $COMMIT_AUTHOR
-          COMMIT_INFO_SHA: $COMMIT_SHA
-          COMMIT_INFO_REMOTE: $COMMIT_REMOTE
+        COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+        COMMIT_INFO_BRANCH: ${{ github.head_ref }}
+        COMMIT_INFO_SHA: ${{ github.sha }}
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COMMIT_INFO_REMOTE: https://github.com/rmhiguerey/app.git
