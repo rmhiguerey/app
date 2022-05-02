@@ -30,7 +30,6 @@ jobs:
              echo "hola"
              echo "GO_VERSION=$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')" >> $GITHUB_ENV
              echo "COMMIT_INFO_BRANCH=$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')" >> $GITHUB_ENV
-             echo "COMMIT_INFO_MESSAGE=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
              echo "EMAIL=$(git log -1 --pretty=%ae)" >> $GITHUB_ENV
              echo "AUTHOR=$(git log -1 --pretty=%an)" >> $GITHUB_ENV
              echo "SHA=$(git log -1 --pretty=%H)" >> $GITHUB_ENV
