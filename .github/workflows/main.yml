@@ -41,7 +41,7 @@ jobs:
              git checkout origin/${{ github.head_ref }}
              git checkout ${{ github.sha }}
              git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }}
-             echo CHANGED_SPECS=$(git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration) >> $GITHUB_ENV
+             echo CHANGED_SPECS=$(git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration) 
 
     - name: Checkout Cypress
       uses: actions/checkout@v2.4.2
@@ -54,7 +54,7 @@ jobs:
              cd cypress
              ls
              npm install
-             if [ -n "${{ env.CHANGED_SPECS}}" ]; then
+             if [ -n "$CHANGED_SPECS" ]; then
              echo "Running the following changed specs"
              echo $CHANGED_SPECS
              npx cypress run --spec $CHANGED_SPECS
