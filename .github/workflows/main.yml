@@ -60,7 +60,7 @@ jobs:
       run: | 
             cd cypress
             ls
-            CHANGED_SPECS=$(git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration)
+            CHANGED_SPECS=$(git diff --name-only ${{ github.base_ref }} ${{ github.head_ref }} -- cypress/integration)
             if [ -n "$CHANGED_SPECS" ]; then
             echo "Running the following changed specs"
             echo $CHANGED_SPECS
