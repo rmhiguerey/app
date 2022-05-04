@@ -35,6 +35,14 @@ jobs:
              echo "AUTHOR=$(git log -1 --pretty=%an)" >> $GITHUB_ENV
              echo "SHA=$(git log -1 --pretty=%H)" >> $GITHUB_ENV
              echo "REMOTE=$(git config --get remote.origin.url)" >> $GITHUB_ENV
+             git fetch --no-tags --depth=1 origin ${{ github.base_ref }}
+             git fetch --no-tags --depth=1 origin ${{ github.head_ref }}
+             git checkout origin/${{ github.base_ref }}
+             git checkout ${{ github.head_ref }}
+             git checkout ${{ github.sha }}
+             git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }}
+             git diff --name-only \ origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration
+             echo CHANGED_SPECS=$(git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration)
 
     - name: Checkout Cypress
       uses: actions/checkout@v2.4.2
@@ -47,14 +55,6 @@ jobs:
              cd cypress
              ls
              npm install
-             git fetch --no-tags --depth=1 origin ${{ github.base_ref }}
-             git fetch --no-tags --depth=1 origin ${{ github.head_ref }}
-             git checkout origin/${{ github.base_ref }}
-             git checkout ${{ github.head_ref }}
-             git checkout ${{ github.sha }}
-             git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }}
-             git diff --name-only \ origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration
-             CHANGED_SPECS=$(git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration)
              if [ -n "$CHANGED_SPECS" ]; then
              echo "Running the following changed specs"
              echo $CHANGED_SPECS
