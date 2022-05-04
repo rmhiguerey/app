@@ -51,6 +51,7 @@ jobs:
     - name: Install Cypress and dependencies 📦
       uses: cypress-io/github-action@v1
       with:
+       working-directory: /home/runner/work/app/app/cypress
        runTests: false
 
     # quickly run just the changed specs to fail fast
