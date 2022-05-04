@@ -57,11 +57,11 @@ jobs:
        tag: ${{ github.event_name }}
       env:
         CI: true
-        CYPRESS_COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
-        CYPRESS_COMMIT_INFO_BRANCH: ${{ env.BRANCH }}
-        CYPRESS_COMMIT_INFO_AUTHOR: ${{ env.AUTHOR }}
-        CYPRESS_COMMIT_INFO_SHA: ${{ github.event.pull_request.head.sha }}
-        CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
-        CYPRESS_GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-        CYPRESS_COMMIT_INFO_REMOTE: ${{ env.REMOTE }}
+        COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+        COMMIT_INFO_BRANCH: ${{ env.BRANCH }}
+        COMMIT_INFO_AUTHOR: ${{ env.AUTHOR }}
+        COMMIT_INFO_SHA: ${{ github.event.pull_request.head.sha }}
+        RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
+        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        COMMIT_INFO_REMOTE: ${{ env.REMOTE }}
 
