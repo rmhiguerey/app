@@ -56,12 +56,12 @@ jobs:
        browser: chrome
        tag: ${{ github.event_name }}
       env:
-        CI: true
+        CI: true 
         COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
         COMMIT_INFO_BRANCH: ${{ env.BRANCH }}
         COMMIT_INFO_AUTHOR: ${{ env.AUTHOR }}
         COMMIT_INFO_SHA: ${{ github.event.pull_request.head.sha }}
-        RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
+        CYPRESS_RECORD_KEY: b4c9b2c8-be43-4a55-b893-66ebbd362b02
         GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         COMMIT_INFO_REMOTE: ${{ env.REMOTE }}
 
