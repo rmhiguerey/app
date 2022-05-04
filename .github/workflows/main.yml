@@ -47,25 +47,6 @@ jobs:
              cd cypress
              ls
              npm install
-             
-    
-    - name: Cypress.io 2
-      uses: cypress-io/github-action@v2.9.7
-      with:
-       working-directory: /home/runner/work/app/app/cypress
-       runTests: false
-
-    # quickly run just the changed specs to fail fast
-    - name: Maybe run just the changed Cypress tests ⏱
-      run: | 
-            cd cypress
-            ls
-            CHANGED_SPECS=$(git diff --name-only ${{ github.base_ref }} ${{ github.head_ref }} -- cypress/integration)
-            if [ -n "$CHANGED_SPECS" ]; then
-            echo "Running the following changed specs"
-            echo $CHANGED_SPECS
-            npx cypress run --spec $CHANGED_SPECS
-            fi
     
     - name: Cypress.io
       uses: cypress-io/github-action@v2.9.7
