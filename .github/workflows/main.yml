@@ -41,7 +41,6 @@ jobs:
              git checkout origin/${{ github.head_ref }}
              git checkout ${{ github.sha }}
              git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }}
-             git diff --name-only \ origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration
              echo CHANGED_SPECS=$(git diff --name-only origin/${{ github.base_ref }} origin/${{ github.head_ref }} -- cypress/integration)
 
     - name: Checkout Cypress
