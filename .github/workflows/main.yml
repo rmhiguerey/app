@@ -48,8 +48,9 @@ jobs:
              ls
              npm install
              
-    - name: Install Cypress and dependencies 📦
-      uses: cypress-io/github-action@v1
+    
+    - name: Cypress.io 2
+      uses: cypress-io/github-action@v2.9.7
       with:
        working-directory: /home/runner/work/app/app/cypress
        runTests: false
