@@ -1,0 +1,22 @@
+services:
+  sindical:
+    build:
+    
+      context: .
+      dockerfile: Dockerfile_sindical
+    image: sindical:latest
+    volumes:
+      - sindical_volume:/opt/back
+
+  app:
+    build:
+    
+      context: .
+      dockerfile: Dockerfile
+    image: app:latest
+    volumes:
+      - sindical_volume:/opt/back
+      - storage_volume:/opt/back/storage
+volumes:
+  sindical_volume:
+  storage_volume:       
